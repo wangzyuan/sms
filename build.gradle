@@ -3,7 +3,10 @@ buildscript {
         springBootVersion = '1.5.9.RELEASE'
     }
     repositories {
-        mavenCentral()
+        //内网地址
+        maven{
+            url "http://172.16.60.188:8081/nexus/content/groups/public"
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -19,7 +22,10 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    //内网地址
+    maven{
+        url "http://172.16.60.188:8081/nexus/content/groups/public"
+    }
 }
 
 
