@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class CacheList {
 
-    private static List<Student> cacheList = new ArrayList<>();
+    private static List<Student> cacheList;
 
     @Autowired
     private static DataSource dataSource;
