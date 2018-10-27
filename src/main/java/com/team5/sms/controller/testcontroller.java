@@ -1,7 +1,16 @@
 package com.team5.sms.controller;
 
+import com.team5.sms.Util.FileUtil;
+import com.team5.sms.cache.CacheList;
+import com.team5.sms.entity.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * All rights Reserved, Designed By Suixingpay.
@@ -13,9 +22,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class testcontroller {
+    private List<Student> list;
 
     @RequestMapping("/index")
     public  String index(){
         return "index";
+    }
+
+    @RequestMapping("/update")
+    public String updateStudent(HttpServletRequest req, Student student){
+      list= CacheList.getCacheList();
+        for (int i=0; i < list.size(); i++){
+            if (student.getSid().equals(list.get(i).getSid())){
+                list.get(i).setName(student.getName());
+                list.get(i).setAge(student.getAge());
+                list.get(i).setSex(student.getSex());
+                list.get(i).setSclass(student.getSclass());
+                list.get(i).setTeacher(student.getTeacher());
+                list.get(i).setYear(student.getYear());
+                list.get(i).setStatus(student.getStatus());
+            }
+        }
+        FileUtil.writeFile(list,"b.txt");
+       return "index";
+
     }
 }
