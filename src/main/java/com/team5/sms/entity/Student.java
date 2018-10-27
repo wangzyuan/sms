@@ -16,7 +16,7 @@ public class Student {
     private Integer age;
     private String sclass;
     private String teacher;
-    private Date create_time;
+    private String create_time;
     private String year;
     private Integer status;
 
@@ -61,11 +61,11 @@ public class Student {
         this.teacher = teacher;
     }
 
-    public Date getCreate_time() {
+    public String getCreate_time() {
         return create_time;
     }
 
-    public void setCreate_time(Date create_time) {
+    public void setCreate_time(String create_time) {
         this.create_time = create_time;
     }
 

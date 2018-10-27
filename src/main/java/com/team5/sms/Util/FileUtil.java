@@ -21,22 +21,23 @@ import java.util.List;
 public class FileUtil {
     public static List<Student> readFile(String name){
         List<Student> stuList = new ArrayList<Student>();
-        Student student = null;
+        Student student = new Student();
         BufferedReader br = null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try{
             br = new BufferedReader(new InputStreamReader( new FileInputStream(name)));
             String studentInfo = null;
             while((studentInfo = br.readLine()) != null) {
-                System.out.println("hello");
                 String[] stu = studentInfo.split(",");
-                System.out.println(Arrays.toString(stu));
-                student.setName(stu[0]);
+                String s1 = stu[0];
+                if (student != null) {
+                    student.setName(s1);
+                }
                 student.setSex(Integer.valueOf(stu[1]));
                 student.setAge(Integer.valueOf(stu[2]));
                 student.setSclass(stu[3]);
                 student.setTeacher(stu[4]);
-                student.setCreate_time(sdf.parse(stu[5]));
+                student.setCreate_time(stu[5]);
                 student.setYear(stu[6]);
                 student.setStatus(Integer.parseInt(stu[7]));
                 stuList.add(student);
@@ -45,14 +46,12 @@ public class FileUtil {
             e.printStackTrace();
         }catch (IOException e1){
             e1.printStackTrace();
-        }catch (ParseException e2){
-            e2.printStackTrace();
         }
         return stuList;
     }
     public static void writeFile(List<Student> l,String name){
         PrintWriter pw = null;
-
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
             pw= new PrintWriter(
                     new OutputStreamWriter(
