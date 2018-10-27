@@ -3,6 +3,7 @@ package com.team5.sms.controller;
 import com.team5.sms.Util.FileUtil;
 import com.team5.sms.cache.CacheList;
 import com.team5.sms.entity.Student;
+import com.team5.sms.service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,12 +22,17 @@ import java.util.List;
  * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
  */
 @Controller
-public class testcontroller {
+public class StudentController{
     private List<Student> list;
-
+    StudentService studentService;
     @RequestMapping("/index")
     public  String index(){
         return "index";
+    }
+
+    @RequestMapping("/add")
+    public void add(Student student){
+        studentService.add(student);
     }
 
     @RequestMapping("/update")

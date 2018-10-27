@@ -1,7 +1,7 @@
 /**
  * All rights Reserved, Designed By Suixingpay.
  *
- * @author: tangqihua[tang_qh@suixingpay.com]
+ * @author: yaonan
  * @date: 2018年10月27日 13时21分
  * @Copyright 2018 Suixingpay. All rights reserved.
  * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileUtil {
+    //读文件
     public static List<Student> readFile(String name){
         List<Student> stuList = new ArrayList<Student>();
 
@@ -54,6 +55,8 @@ public class FileUtil {
         }
         return stuList;
     }
+
+    //写文件
     public static void writeFile(List<Student> l,String name){
         PrintWriter pw = null;
 
@@ -75,7 +78,7 @@ public class FileUtil {
             e1.printStackTrace();
         }finally {
             if(pw != null){
-                pw.close();
+                pw.close();//关闭流
             }
         }
     }
