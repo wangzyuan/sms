@@ -18,13 +18,15 @@ import java.util.List;
 public class FileUtil {
     public static List<Student> readFile(String name){
         List<Student> stuList = new ArrayList<Student>();
-        Student student = new Student();
+
         BufferedReader br = null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try{
             br = new BufferedReader(new InputStreamReader( new FileInputStream(name)));
             String studentInfo = null;
-            while((studentInfo = br.readLine()) != null) {
+            while((studentInfo = br.readLine()) != null) {//判断改行是否有数据
+                Student student = new Student();
+                System.out.printf(studentInfo);
                 String[] stu = studentInfo.split(",");
                 student.setName(stu[0]);
                 student.setSex(Integer.valueOf(stu[1]));
@@ -41,6 +43,14 @@ public class FileUtil {
             e.printStackTrace();
         }catch (IOException e1) {
             e1.printStackTrace();
+        }finally {
+            if(br != null){
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return stuList;
     }
@@ -63,6 +73,10 @@ public class FileUtil {
             e.printStackTrace();
         }catch (UnsupportedEncodingException e1){
             e1.printStackTrace();
+        }finally {
+            if(pw != null){
+                pw.close();
+            }
         }
     }
 }
