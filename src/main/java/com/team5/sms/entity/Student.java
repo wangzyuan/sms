@@ -1,7 +1,5 @@
 package com.team5.sms.entity;
 
-import java.util.Date;
-
 /**
  * All rights Reserved, Designed By Suixingpay.
  *
@@ -11,15 +9,32 @@ import java.util.Date;
  * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
  */
 public class Student {
+    //学生姓名
     private String name;
+    //性别
     private Integer sex;
+    //年龄
     private Integer age;
+    //班级
     private String sclass;
+    //任课老师
     private String teacher;
-    private Date create_time;
+    //创建时间
+    private String create_time;
+    //年份
     private String year;
+    //学生状态
     private Integer status;
+    //学生学号
+    private String Sid;
 
+    public String getSid() {
+        return Sid;
+    }
+
+    public void setSid(String sid) {
+        Sid = sid;
+    }
 
     public String getName() {
         return name;
@@ -61,11 +76,11 @@ public class Student {
         this.teacher = teacher;
     }
 
-    public Date getCreate_time() {
+    public String getCreate_time() {
         return create_time;
     }
 
-    public void setCreate_time(Date create_time) {
+    public void setCreate_time(String create_time) {
         this.create_time = create_time;
     }
 
@@ -93,9 +108,10 @@ public class Student {
                 ", age=" + age +
                 ", sclass='" + sclass + '\'' +
                 ", teacher='" + teacher + '\'' +
-                ", create_time=" + create_time +
+                ", create_time='" + create_time + '\'' +
                 ", year='" + year + '\'' +
                 ", status=" + status +
+                ", Sid='" + Sid + '\'' +
                 '}';
     }
 }
