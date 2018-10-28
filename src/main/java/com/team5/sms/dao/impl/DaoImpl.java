@@ -43,9 +43,21 @@ public class DaoImpl implements Dao {
 
     }
 
-
+    @Override
     public List<Student> findAllStudent() {
         List<Student> stuList = CacheList.getCacheList();
         return stuList;
     }
+
+    @Override
+    public void deleteStudent(String sId) {
+        List<Student> list = CacheList.getCacheList();
+        for (int i = 0; i < list.size(); i++) {
+            if (sId.equals(list.get(i).getSid())) {
+                list.get(i).setStatus(0);
+            }
+        }
+    }
+
+
 }

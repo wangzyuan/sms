@@ -4,6 +4,7 @@ import com.team5.sms.entity.Student;
 import com.team5.sms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -68,6 +69,12 @@ public class StudentController {
     public String findAllStudent(HttpServletRequest req){
         List<Student> list  =studentService.findAllStudent();
         req.setAttribute("list",list);
+        return "index";
+    }
+
+    @RequestMapping("/delete")
+    public String deleteStudent(String sId) {
+        studentService.deleteStudent(sId);
         return "index";
     }
 }

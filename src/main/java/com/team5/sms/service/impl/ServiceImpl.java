@@ -39,4 +39,9 @@ public class ServiceImpl implements StudentService {
         return list;
 
     }
+
+    @Override
+    public void deleteStudent(String sId) {
+        dao.deleteStudent(sId);
+    }
 }
