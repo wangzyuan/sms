@@ -4,7 +4,6 @@ import com.team5.sms.entity.Student;
 import com.team5.sms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -37,7 +36,6 @@ public class StudentController {
     }
     /**
      * 姚楠
-     *
      * @param student
      */
     @RequestMapping("/add")
@@ -77,15 +75,34 @@ public class StudentController {
         req.setAttribute("list",list);
         return "index";
     }
-   @RequestMapping("/updateUI")
-    public String updateUI(){
-
-        return "update";
+    /*
+     * All rights Reserved, Designed By Suixingpay.
+     *
+     * @Author wangzhiyuan[wang_zy1@suixingpay.com]
+     * @Method 修改页面
+     * @Date 2018/10/28   17:32
+     * @Copyright © 2018 Suixingpay. All rights reserved.
+     * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
+     */
+   @RequestMapping("/updateUI/{sid}")
+    public String updateUI(HttpServletRequest req,@ PathVariable String sid){
+       List<Student> list  =studentService.findStudentById(sid);
+       req.setAttribute("list",list);
+       return "update";
    }
 
+   /*
+    * All rights Reserved, Designed By Suixingpay.
+    *
+    * @Author gonghang[gong_hang@suixingpay.com]
+    * @Method findStudentById
+    * @Date 2018/10/28   5:32 PM
+    * @Copyright ©2018 Suixingpay. All rights reserved.
+    * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
+    */
    @RequestMapping("/findById")
-    public String findStudentById(HttpServletRequest req,Student student){
-        List<Student> list = studentService.findStudentById(student);
+    public String findStudentById(HttpServletRequest req,String sid){
+        List<Student> list = studentService.findStudentById(sid);
             req.setAttribute("list",list);
             return "index";
        }

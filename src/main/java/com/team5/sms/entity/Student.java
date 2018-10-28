@@ -33,7 +33,7 @@ public class Student {
     }
 
     public void setSid(String sid) {
-        sid = sid;
+        this.sid = sid;
     }
 
     public String getName() {

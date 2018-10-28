@@ -44,8 +44,8 @@ public class ServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> findStudentById(Student student) {
-        List<Student> list = dao.findStudentById(student);
+    public List<Student> findStudentById(String sid) {
+        List<Student> list = dao.findStudentById(sid);
         return list;
     }
 }

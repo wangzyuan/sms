@@ -41,13 +41,17 @@
         </td>
         <td>
             <b>性别:</b>
-            <span>女</span>
+            <span> <c:if test="${s.sex==1 }">
+                男
+            </c:if> <c:if test="${s.sex==0 }">
+                女
+            </c:if></span>
             <span onclick="change_name(this)">修改</span>
         </td>
 
         <td>
             <b>年龄:</b>
-            <span>22</span>
+            <span>${s.age}</span>
             <span onclick="change_name(this)">修改</span>
         </td>
 
@@ -55,35 +59,35 @@
     <tr>
         <td>
             <b>学号:</b>
-            <span>4918</span>
+            <span>${s.sid}</span>
             <span onclick="change_name(this)">修改</span>
         </td>
 
         <td>
             <b>班级:</b>
-            <span>星火三班</span>
+            <span>${s.sclass}</span>
             <span onclick="change_name(this)">修改</span>
         </td>
         <td>
             <b>导员:</b>
-            <span>刘丽娜</span>
+            <span>${s.teacher}</span>
             <span onclick="change_name(this)">修改</span>
         </td>
     </tr>
     <tr>
         <td>
             <b>创建时间:</b>
-            <span>2018.10.22</span>
+            <span>${s.create_time}</span>
             <span onclick="change_name(this)">修改</span>
         </td>
         <td>
             <b>入学年份:</b>
-            <span>2018年</span>
+            <span>${s.year}</span>
             <span onclick="change_name(this)">修改</span>
         </td>
         <td>
             <b>状态:</b>
-            <span>000</span>
+            <span>${s.status}</span>
             <span onclick="change_name(this)">修改</span>
         </td>
     </tr>
