@@ -2,6 +2,8 @@ package com.team5.sms.dao;
 
 import com.team5.sms.entity.Student;
 
+import java.util.List;
+
 /**
  * All rights Reserved, Designed By Suixingpay.
  *
@@ -12,4 +14,5 @@ import com.team5.sms.entity.Student;
  */
 public interface Dao {
     void add (Student student);
+    void update(Student student);
 }

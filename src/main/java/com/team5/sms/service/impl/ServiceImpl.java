@@ -20,9 +20,15 @@ import javax.annotation.Resource;
 @Service
 public class ServiceImpl implements StudentService {
     @Resource
-    Dao dao ;
+    Dao dao;
+
     @Override
     public void add(Student student) {
         dao.add(student);
+    }
+
+    @Override
+    public void update(Student student) {
+        dao.update(student);
     }
 }

@@ -12,4 +12,5 @@ import com.team5.sms.entity.Student;
 
 public interface StudentService {
     void add(Student student);
+    void update(Student student);
 }

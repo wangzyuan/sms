@@ -23,4 +23,24 @@ public class DaoImpl implements Dao {
         studentList.add(student);
         System.out.println(studentList);
     }
+
+    @Override
+    public void update(Student student) {
+        List<Student> list = CacheList.getCacheList();
+        for (int i = 0; i < list.size(); i++) {
+            if (student.getSid().equals(list.get(i).getSid())) {
+                list.get(i).setName(student.getName());
+                list.get(i).setAge(student.getAge());
+                list.get(i).setSex(student.getSex());
+                list.get(i).setSclass(student.getSclass());
+                list.get(i).setTeacher(student.getTeacher());
+                list.get(i).setYear(student.getYear());
+                list.get(i).setStatus(student.getStatus());
+            }
+        }
+        FileUtil.writeFile(list, "b.txt");
+
+    }
+
+
 }
