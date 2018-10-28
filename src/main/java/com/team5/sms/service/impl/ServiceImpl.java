@@ -9,13 +9,12 @@
 package com.team5.sms.service.impl;
 
 import com.team5.sms.dao.Dao;
-import com.team5.sms.dao.impl.DaoImpl;
 import com.team5.sms.entity.Student;
 import com.team5.sms.service.StudentService;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class ServiceImpl implements StudentService {
@@ -28,7 +27,13 @@ public class ServiceImpl implements StudentService {
     }
 
     @Override
+<<<<<<< Updated upstream
     public void update(Student student) {
         dao.update(student);
+=======
+    public List<Student> findAllStudent() {
+        List<Student> list = dao.findAllStudent();
+        return list;
+>>>>>>> Stashed changes
     }
 }

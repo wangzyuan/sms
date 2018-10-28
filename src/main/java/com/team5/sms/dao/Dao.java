@@ -14,5 +14,10 @@ import java.util.List;
  */
 public interface Dao {
     void add (Student student);
+<<<<<<< Updated upstream
     void update(Student student);
+=======
+
+    List<Student> findAllStudent();
+>>>>>>> Stashed changes
 }

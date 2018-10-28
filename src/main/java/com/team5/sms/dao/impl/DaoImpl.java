@@ -8,7 +8,6 @@
  */
 package com.team5.sms.dao.impl;
 
-import com.team5.sms.Util.FileUtil;
 import com.team5.sms.cache.CacheList;
 import com.team5.sms.dao.Dao;
 import com.team5.sms.entity.Student;
@@ -25,6 +24,7 @@ public class DaoImpl implements Dao {
     }
 
     @Override
+<<<<<<< Updated upstream
     public void update(Student student) {
         List<Student> list = CacheList.getCacheList();
         for (int i = 0; i < list.size(); i++) {
@@ -43,4 +43,10 @@ public class DaoImpl implements Dao {
     }
 
 
+=======
+    public List<Student> findAllStudent() {
+        List<Student> stuList = CacheList.getCacheList();
+        return stuList;
+    }
+>>>>>>> Stashed changes
 }
