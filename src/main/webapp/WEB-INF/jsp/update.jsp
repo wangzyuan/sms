@@ -28,12 +28,15 @@
 
 </head>
 <body>
-<img src="头像 男孩.png" alt="头像" style="width:150px;height:150px;">
+<img src="../../static/img/头像 男孩.png" alt="头像" style="width:150px;height:150px;">
+
 <table class="see" cellspacing="100px">
+
+    <c:forEach items="${list}" var="s">
     <tr>
         <td>
             <b>姓名:</b>
-            <span>王思雨</span>
+            <span>${s.name}</span>
             <span onclick="change_name(this)">修改</span>
         </td>
         <td>
@@ -84,6 +87,7 @@
             <span onclick="change_name(this)">修改</span>
         </td>
     </tr>
+    </c:forEach>
 </table>
 <button oncilck="b()">提交</button>
 <button oncilck="c()">取消</button>

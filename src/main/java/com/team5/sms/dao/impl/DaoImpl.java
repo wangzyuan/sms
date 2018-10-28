@@ -48,6 +48,11 @@ public class DaoImpl implements Dao {
     }
 
     @Override
+    public void deleteStudent(String name) {
+
+    }
+
+    @Override
     public List<Student> findStudentById(Student student) {
         List<Student> stuList = CacheList.getCacheList();
         List<Student> findList = new ArrayList<>();
