@@ -8,7 +8,6 @@
  */
 package com.team5.sms.dao.impl;
 
-import com.team5.sms.Util.FileUtil;
 import com.team5.sms.cache.CacheList;
 import com.team5.sms.dao.Dao;
 import com.team5.sms.entity.Student;
@@ -40,19 +39,12 @@ public class DaoImpl implements Dao {
                 list.get(i).setStatus(student.getStatus());
             }
         }
-        FileUtil.writeFile(list, "b.txt");
-
     }
 
 
     public List<Student> findAllStudent() {
         List<Student> stuList = CacheList.getCacheList();
         return stuList;
-    }
-
-    @Override
-    public void deleteStudent(String name) {
-
     }
 
     @Override
@@ -66,4 +58,17 @@ public class DaoImpl implements Dao {
         }
         return findList;
     }
+
+    @Override
+    public void deleteStudent(String sid) {
+        List<Student> list = CacheList.getCacheList();
+        for (int i = 0; i < list.size(); i++) {
+            if (sid.equals(list.get(i).getSid())) {
+                list.get(i).setStatus(0);
+            }
+        }
+
+    }
+
+
 }
