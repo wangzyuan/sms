@@ -44,7 +44,13 @@ public class DaoImpl implements Dao {
 
     public List<Student> findAllStudent() {
         List<Student> stuList = CacheList.getCacheList();
-        return stuList;
+        List<Student> students = new ArrayList<>();
+        for(int i=0;i<stuList.size();i++){
+            if(stuList.get(i).getStatus().equals(1)){
+                students.add(stuList.get(i));
+            }
+        }
+        return students;
     }
 
     @Override
