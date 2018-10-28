@@ -1,7 +1,7 @@
 /**
  * All rights Reserved, Designed By Suixingpay.
  *
- * @author: tangqihua[tang_qh@suixingpay.com]
+ * @author: yaonan
  * @date: 2018年10月27日 13时21分
  * @Copyright 2018 Suixingpay. All rights reserved.
  * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
@@ -16,15 +16,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileUtil {
+    //读文件
     public static List<Student> readFile(String name){
         List<Student> stuList = new ArrayList<Student>();
-        Student student = new Student();
+
         BufferedReader br = null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try{
             br = new BufferedReader(new InputStreamReader( new FileInputStream(name)));
             String studentInfo = null;
-            while((studentInfo = br.readLine()) != null) {
+            while((studentInfo = br.readLine()) != null) {//判断改行是否有数据
+                Student student = new Student();
+                System.out.printf(studentInfo);
                 String[] stu = studentInfo.split(",");
                 student.setName(stu[0]);
                 student.setSex(Integer.valueOf(stu[1]));
@@ -41,9 +44,19 @@ public class FileUtil {
             e.printStackTrace();
         }catch (IOException e1) {
             e1.printStackTrace();
+        }finally {
+            if(br != null){
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return stuList;
     }
+
+    //写文件
     public static void writeFile(List<Student> l,String name){
         PrintWriter pw = null;
 
@@ -63,6 +76,10 @@ public class FileUtil {
             e.printStackTrace();
         }catch (UnsupportedEncodingException e1){
             e1.printStackTrace();
+        }finally {
+            if(pw != null){
+                pw.close();//关闭流
+            }
         }
     }
 }
