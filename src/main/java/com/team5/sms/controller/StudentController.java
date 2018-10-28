@@ -72,15 +72,17 @@ public class StudentController {
         req.setAttribute("list",list);
         return "index";
     }
-   @RequestMapping("/updateUI")
-    public String updateUI(){
+   @RequestMapping("/updateUI/{sid}")
+    public String updateUI(HttpServletRequest req,@ PathVariable String sid){
+       List<Student> list  =studentService.findStudentById(sid);
+       req.setAttribute("list",list);
 
         return "update";
    }
 
    @RequestMapping("/findById")
-    public String findStudentById(HttpServletRequest req,Student student){
-        List<Student> list = studentService.findStudentById(student);
+    public String findStudentById(HttpServletRequest req,String sid){
+        List<Student> list = studentService.findStudentById(sid);
             req.setAttribute("list",list);
             return "index";
        }

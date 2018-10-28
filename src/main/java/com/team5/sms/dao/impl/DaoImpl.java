@@ -56,11 +56,11 @@ public class DaoImpl implements Dao {
     }
 
     @Override
-    public List<Student> findStudentById(Student student) {
+    public List<Student> findStudentById(String sid) {
         List<Student> stuList = CacheList.getCacheList();
         List<Student> findList = new ArrayList<>();
         for(int i=0;i<stuList.size();i++){
-            if(stuList.get(i).getSid().equals(student.getSid())){
+            if(stuList.get(i).getSid().equals(sid)){
                 findList.add(stuList.get(i));
             }
         }
