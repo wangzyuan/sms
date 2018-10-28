@@ -30,8 +30,10 @@ repositories {
 
 
 dependencies {
+    compile 'org.springframework.boot:spring-boot-configuration-processor:2.0.6.RELEASE'
     compile('org.springframework.boot:spring-boot-starter-web')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
     compile 'jstl:jstl:1.2'
 }
+
