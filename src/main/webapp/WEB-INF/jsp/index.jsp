@@ -13,7 +13,10 @@
     <title></title>
     <link href="../../static/main1.css" rel="stylesheet" type="text/css">
     <script>
+        function delete() {
+            return null;
 
+        }
     </script>
 </head>
 <body>
@@ -73,10 +76,10 @@
                     <td style="width:95px;">${stu.create_time}</td>
                     <td style="width:92px;">${stu.year}</td>
                     <td style="width:55px;">${stu.status}</td>
-                    <td style="width:55px;">${stu.sid}</td>
+                    <td idstyle="width:55px;">${stu.sid}</td>
                     <td style="width:70px;">
                         <a href=""><img src="../../static/img/eye.gif"></a>
-                        <a href=""><img src="../../static/img/laji.gif"></a>
+                        <a href=""><img src="../../static/img/laji.gif" onclick="delete()"></a>
                         <a href=""><img src="../../static/img/change1.gif"></a>
                     </td>
                 </tr>
@@ -85,7 +88,13 @@
         </table>
     </div>
 </div>
-
+<div>
+    <form id="idForm"
+          action="" onsubmit="return false"
+          method="post">
+        <input type="hidden" name="sId" />
+    </form>
+</div>
 
 </body>
 </html>
