@@ -20,23 +20,25 @@ import java.util.List;
  * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
  */
 @Controller
-public class StudentController{
+public class StudentController {
     private List<Student> list;
     StudentService studentService;
+
     @RequestMapping("/index")
-    public  String index(){
+    public String index() {
         return "index";
     }
 
     /**
      * 姚楠
+     *
      * @param student
      */
     @RequestMapping("/add")
-    public void add(Student student){
+    public void add(Student student) {
         studentService.add(student);
     }
-    
+
     /*
      * All rights Reserved, Designed By Suixingpay.
      *
@@ -47,21 +49,9 @@ public class StudentController{
      * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
      */
     @RequestMapping("/update")
-    public String updateStudent(HttpServletRequest req, Student student){
-      list= CacheList.getCacheList();
-        for (int i=0; i < list.size(); i++){
-            if (student.getSid().equals(list.get(i).getSid())){
-                list.get(i).setName(student.getName());
-                list.get(i).setAge(student.getAge());
-                list.get(i).setSex(student.getSex());
-                list.get(i).setSclass(student.getSclass());
-                list.get(i).setTeacher(student.getTeacher());
-                list.get(i).setYear(student.getYear());
-                list.get(i).setStatus(student.getStatus());
-            }
-        }
-        FileUtil.writeFile(list,"b.txt");
-       return "index";
+    public String updateStudent(HttpServletRequest req, Student student) {
+        studentService.update(student);
+        return "index";
 
     }
 
@@ -75,9 +65,9 @@ public class StudentController{
      * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
      */
     @RequestMapping("/find")
-    public String findAllStudent(HttpServletRequest req,Student student){
+    public String findAllStudent(HttpServletRequest req, Student student) {
         list = CacheList.getCacheList();
-        req.setAttribute("list",list);
+        req.setAttribute("list", list);
         return "index";
     }
 }
