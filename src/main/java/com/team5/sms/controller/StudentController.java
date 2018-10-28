@@ -4,6 +4,7 @@ import com.team5.sms.entity.Student;
 import com.team5.sms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -70,4 +71,10 @@ public class StudentController {
         req.setAttribute("list",list);
         return "index";
     }
+   @RequestMapping("/updateUI")
+    public String updateUI(){
+
+        return "update";
+   }
+
 }
