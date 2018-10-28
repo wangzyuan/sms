@@ -104,7 +104,7 @@ public class StudentController {
     public String findStudentById(HttpServletRequest req,String sid){
         List<Student> list = studentService.findStudentById(sid);
             req.setAttribute("list",list);
-            return "index";
+            return "details";
        }
 
     /**
