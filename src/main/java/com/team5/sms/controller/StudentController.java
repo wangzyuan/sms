@@ -36,7 +36,16 @@ public class StudentController{
     public void add(Student student){
         studentService.add(student);
     }
-
+    
+    /*
+     * All rights Reserved, Designed By Suixingpay.
+     *
+     * @Author wangzhiyuan[wang_zy1@suixingpay.com]
+     * @Method update
+     * @Date 2018/10/28   10:31
+     * @Copyright © 2018 Suixingpay. All rights reserved.
+     * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
+     */
     @RequestMapping("/update")
     public String updateStudent(HttpServletRequest req, Student student){
       list= CacheList.getCacheList();
