@@ -72,6 +72,18 @@ public class StudentController {
         req.setAttribute("list",list);
         return "index";
     }
+   @RequestMapping("/updateUI")
+    public String updateUI(){
+
+        return "update";
+   }
+
+   @RequestMapping("/findById")
+    public String findStudentById(HttpServletRequest req,Student student){
+        List<Student> list = studentService.findStudentById(student);
+            req.setAttribute("list",list);
+            return "index";
+       }
 
     /**
      * 根据学号进行删除
@@ -85,3 +97,6 @@ public class StudentController {
         return "redirect:/find";
     }
 }
+
+
+

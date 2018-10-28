@@ -6,14 +6,29 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
     <link href="../../static/main1.css" rel="stylesheet" type="text/css">
     <script>
+        function f3() {
+            var img = document.getElementById("img_kuai");
+            img.src = "img/kuai1.gif";
+        }
 
+        function f4() {
+            var img = document.getElementById("img_kuai");
+            img.src = "img/kuai1.gif";
+            var delate = document.getElementById("delate");
+            delate.style.display = "block";
+        }
+
+        function quxiao() {
+            var delate = document.getElementById("delate");
+            delate.style.display = "none";
+        }
     </script>
 </head>
 <body>
@@ -85,12 +100,11 @@
         </table>
     </div>
 </div>
-<div>
-    <form id="idForm"
-          action="" onsubmit="return false"
-          method="post">
-        <input type="hidden" name="sId" />
-    </form>
+<div class="delate" id="delate">
+    <a href="javascript:void (0)" onclick="quxiao()">x</a>
+    <h1>确定删除吗？</h1>
+    <button style="margin-left: 90px;" onclick="sure1()" id="button1">确定</button>
+    <button onclick="quxiao()">取消</button>
 </div>
 
 </body>

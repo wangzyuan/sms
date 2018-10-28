@@ -1,7 +1,6 @@
 package com.team5.sms.dao;
 
 import com.team5.sms.entity.Student;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -30,4 +29,15 @@ public interface Dao {
     List<Student> findAllStudent();
 
     void deleteStudent(String name);
+
+    /*
+     * All rights Reserved, Designed By Suixingpay.
+     *
+     * @Author gonghang[gong_hang@suixingpay.com]
+     * @Method findStudentById
+     * @Date 2018/10/28   4:36 PM
+     * @Copyright ©2018 Suixingpay. All rights reserved.
+     * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
+     */
+    List<Student> findStudentById(Student student);
 }

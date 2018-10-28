@@ -14,6 +14,7 @@ import com.team5.sms.dao.Dao;
 import com.team5.sms.entity.Student;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 @Repository
 public class DaoImpl implements Dao {
@@ -43,21 +44,21 @@ public class DaoImpl implements Dao {
 
     }
 
-    @Override
+
     public List<Student> findAllStudent() {
         List<Student> stuList = CacheList.getCacheList();
         return stuList;
     }
 
     @Override
-    public void deleteStudent(String sId) {
-        List<Student> list = CacheList.getCacheList();
-        for (int i = 0; i < list.size(); i++) {
-            if (sId.equals(list.get(i).getSid())) {
-                list.get(i).setStatus(0);
+    public List<Student> findStudentById(Student student) {
+        List<Student> stuList = CacheList.getCacheList();
+        List<Student> findList = new ArrayList<>();
+        for(int i=0;i<stuList.size();i++){
+            if(stuList.get(i).getSid().equals(student.getSid())){
+                findList.add(stuList.get(i));
             }
         }
+        return findList;
     }
-
-
 }
