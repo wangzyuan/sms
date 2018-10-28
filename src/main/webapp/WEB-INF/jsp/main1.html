@@ -5,6 +5,20 @@
     <title></title>
     <link href="main1.css" rel="stylesheet" type="text/css">
     <script>
+        function f3(){
+            var img=document.getElementById("img_kuai");
+            img.src="img/kuai1.gif";
+        }
+        function f4(){
+            var img=document.getElementById("img_kuai");
+            img.src="img/kuai1.gif";
+            var delate=document.getElementById("delate");
+            delate.style.display="block";
+        }
+        function quxiao(){
+            var delate=document.getElementById("delate");
+            delate.style.display="none";
+        }
     </script>
 </head>
 <body>
@@ -24,13 +38,13 @@
         <div class="search">
             <div class="name">
                 <p>姓名：</p>
-                <input class="input1" type="text">
+                <input id="namevalue" class="input1" type="text">
             </div>
             <div class="cLass">
                 <p>学号：</p>
-                <input class="input1" type="text">
+                <input id="xuehao" class="input1" type="text">
             </div>
-            <img style="margin-top: 12px; margin-left: 20px;" src="img/search.gif">
+            <img onclick="f1()" style="margin-top: 12px; margin-left: 20px;" src="img/search.gif">
             <img style="margin-top: 0; margin-left: 15px;" src="img/add.gif">
         </div>
         <div class="con">
@@ -39,6 +53,7 @@
             <p>年龄</p>
             <p>性别</p>
             <p>班级</p>
+            <p>学号</p>
             <p>老师</p>
             <p>创建时间</p>
             <p>入学年份</p>
@@ -46,24 +61,31 @@
             <p>操作</p>
         </div>
         <table style="border: 1px solid #cccccc;">
-            <tr>
-                <td style="width:70px;"><img src="img/kuai.png" id="img1"></td>
+            <tr align="center">
+                <td style="width:50px;" align="left"><img src="img/kuai.png" id="img_kuai"></td>
                 <td style="width:70px;">黄彩云</td>
                 <td style="width:70px;">21</td>
                 <td style="width:50px;">女</td>
-                <td style="width:80px;">星火三期</td>
+                <td style="width:70px;">星火三期</td>
+                <td style="width:75px;">150421428</td>
                 <td style="width:60px;">李廷</td>
                 <td style="width:95px;">2018-10-22</td>
                 <td style="width:92px;">2015-9-1</td>
                 <td style="width:55px;">在职</td>
                 <td style="width:70px;">
-                    <a href=""><img src="img/eye.gif"></a>
-                    <a href=""><img src="img/laji.gif"></a>
-                    <a href=""><img src="img/change1.gif"></a>
+                    <a href="javascript:void(0)"><img onclick="f3()" src="img/eye.gif"></a>
+                    <a href="javascript:void(0)"><img onclick="f4()" src="img/laji.gif"></a>
+                    <a href="javascript:void(0)"><img src="img/change1.gif"></a>
                 </td>
             </tr>
         </table>
     </div>
+</div>
+<div class="delate" id="delate">
+    <a href="javascript:void (0)" onclick="quxiao()">x</a>
+    <h1>确定删除吗？</h1>
+    <button style="margin-left: 90px;">确定</button>
+    <button onclick="quxiao()">取消</button>
 </div>
 
 
