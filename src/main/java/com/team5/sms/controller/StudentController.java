@@ -4,6 +4,7 @@ import com.team5.sms.entity.Student;
 import com.team5.sms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -39,7 +40,8 @@ public class StudentController {
      * @param student
      */
     @RequestMapping("/add")
-    public String add(Student student) {
+    public String add(Student student, BindingResult bindingResult) {
+        System.out.println("---add---");
         studentService.add(student);
         return "redirect:/find";
     }
@@ -72,6 +74,7 @@ public class StudentController {
     @RequestMapping("/find")
     public String findAllStudent(HttpServletRequest req){
         List<Student> list  =studentService.findAllStudent();
+        System.out.println("---"+list.size());
         req.setAttribute("list",list);
         return "index";
     }

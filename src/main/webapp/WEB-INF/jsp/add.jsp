@@ -45,7 +45,7 @@
     <tr>
         <td>
             <b>学   号:</b>
-            <input id="tit4" style='display:inline-block;width:70px' name = "Sid" >
+            <input id="tit4" style='display:inline-block;width:70px' name = "sid" >
             <span id="pop4"></span>
         </td>
         <td>
