@@ -92,7 +92,7 @@
                     <td style="width:55px;">${stu.status}</td>
 
                     <td style="width:70px;">
-                        <a href=""><img src="../../static/img/eye.gif"></a>
+                        <a href="/findById"><img src="../../static/img/eye.gif"></a>
                         <a href="/delete/${stu.sid}"><img src="../../static/img/laji.gif"></a>
                         <a href="/updateUI/${stu.sid}"><img src="../../static/img/change1.gif"></a>
                     </td>
