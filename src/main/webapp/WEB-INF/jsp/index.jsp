@@ -100,7 +100,12 @@
         </table>
     </div>
 </div>
-
+<div class="delate" id="delate">
+    <a href="javascript:void (0)" onclick="quxiao()">x</a>
+    <h1>确定删除吗？</h1>
+    <button style="margin-left: 90px;" onclick="sure1()" id="button1">确定</button>
+    <button onclick="quxiao()">取消</button>
+</div>
 
 </body>
 </html>
