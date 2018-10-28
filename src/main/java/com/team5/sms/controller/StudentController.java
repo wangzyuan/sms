@@ -50,8 +50,9 @@ public class StudentController {
      */
     @RequestMapping("/update")
     public String updateStudent(HttpServletRequest req, Student student) {
+//        System.out.println(student.toString());
         studentService.update(student);
-        return "index";
+        return "redirect:/find";
 
     }
 

@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-<img src="头像 男孩.png" alt="头像" style="width:150px;height:150px;">
+<img src="../../static/img/头像 男孩.png" alt="头像" style="width:150px;height:150px;">
 <table class="see" cellspacing="100px">
     <c:forEach items="${list}" var="list">
         <tr>
