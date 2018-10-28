@@ -1,5 +1,7 @@
 package com.team5.sms.dao;
 
+import com.team5.sms.entity.Student;
+
 /**
  * All rights Reserved, Designed By Suixingpay.
  *
@@ -8,5 +10,6 @@ package com.team5.sms.dao;
  * @Copyright 2018 ©Suixingpay. All rights reserved.
  * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
  */
-public class testdao {
+public interface Dao {
+    void add (Student student);
 }
