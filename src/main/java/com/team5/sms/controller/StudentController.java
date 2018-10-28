@@ -1,9 +1,8 @@
 package com.team5.sms.controller;
 
-import com.team5.sms.Util.FileUtil;
-import com.team5.sms.cache.CacheList;
 import com.team5.sms.entity.Student;
 import com.team5.sms.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,6 +21,7 @@ import java.util.List;
 @Controller
 public class StudentController {
     private List<Student> list;
+    @Autowired
     StudentService studentService;
 
     @RequestMapping("/index")
@@ -65,9 +65,9 @@ public class StudentController {
      * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
      */
     @RequestMapping("/find")
-    public String findAllStudent(HttpServletRequest req, Student student) {
-        list = CacheList.getCacheList();
-        req.setAttribute("list", list);
+    public String findAllStudent(HttpServletRequest req){
+        List<Student> list  =studentService.findAllStudent();
+        req.setAttribute("list",list);
         return "index";
     }
 }

@@ -10,6 +10,7 @@ package com.team5.sms.cache;
 
 import com.team5.sms.Util.FileUtil;
 import com.team5.sms.entity.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
@@ -18,12 +19,19 @@ import java.util.List;
 @Component
 public class DestroyCache {
 
+    @Autowired
+    private DataSource dataSource;
+
+    /**
+     * 容器结束时执行方法，将ArrayList中的学生信息存到txt文件中
+     */
     @PreDestroy
     public void destroy() {
 
         System.out.println("<<<<<<<<<<<我被销毁了......................>>>>>>>>>>>>>>>");
         List<Student> students = CacheList.getCacheList();
-        String filePath = "b.txt";
+        String filePath = dataSource.getFileRoot();
+        System.out.println("--{}---"+filePath);
         FileUtil.writeFile(students,filePath);
     }
 }
