@@ -51,7 +51,7 @@
                 学号：<input name="number" class="input1" type="text">
                 <input type="submit" value="搜索" style="margin-left:10px; width:65px; height:30px; background: cornflowerblue; border: 1px solid #ccc;">
             </form>
-            <a href="javascript:void(0)"><img style="margin-top: 12px; margin-left: 15px; float: left;" src="../../static/img/add.gif"></a>
+            <a href="/addRedirect"><img style="margin-top: 12px; margin-left: 15px; float: left;" src="../../static/img/add.gif"></a>
 
         </div>
         <div class="con">

@@ -31,14 +31,19 @@ public class StudentController {
         return "index";
     }
 
+    @RequestMapping("/addRedirect")
+    public String addRedirect() {
+        return "add";
+    }
     /**
      * 姚楠
      *
      * @param student
      */
     @RequestMapping("/add")
-    public void add(Student student) {
+    public String add(Student student) {
         studentService.add(student);
+        return "redirect:/find";
     }
 
     /*

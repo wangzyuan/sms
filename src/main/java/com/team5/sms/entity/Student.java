@@ -26,14 +26,14 @@ public class Student {
     //学生状态
     private Integer status;
     //学生学号
-    private String Sid;
+    private String sid;
 
     public String getSid() {
-        return Sid;
+        return sid;
     }
 
     public void setSid(String sid) {
-        Sid = sid;
+        sid = sid;
     }
 
     public String getName() {
@@ -111,7 +111,7 @@ public class Student {
                 ", create_time='" + create_time + '\'' +
                 ", year='" + year + '\'' +
                 ", status=" + status +
-                ", Sid='" + Sid + '\'' +
+                ", Sid='" + sid + '\'' +
                 '}';
     }
 }
