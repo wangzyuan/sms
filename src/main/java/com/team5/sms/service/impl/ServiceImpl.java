@@ -27,13 +27,14 @@ public class ServiceImpl implements StudentService {
     }
 
     @Override
-<<<<<<< Updated upstream
     public void update(Student student) {
         dao.update(student);
-=======
+    }
+
+    @Override
     public List<Student> findAllStudent() {
         List<Student> list = dao.findAllStudent();
         return list;
->>>>>>> Stashed changes
+
     }
 }

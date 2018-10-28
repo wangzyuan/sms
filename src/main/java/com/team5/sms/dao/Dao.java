@@ -14,10 +14,17 @@ import java.util.List;
  */
 public interface Dao {
     void add (Student student);
-<<<<<<< Updated upstream
-    void update(Student student);
-=======
 
+    void update(Student student);
+
+    /*
+     * All rights Reserved, Designed By Suixingpay.
+     *
+     * @Author gonghang[gong_hang@suixingpay.com]
+     * @Method 查询所有学生信息
+     * @Date 2018/10/28   11:43 AM
+     * @Copyright ©2018 Suixingpay. All rights reserved.
+     * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
+     */
     List<Student> findAllStudent();
->>>>>>> Stashed changes
 }

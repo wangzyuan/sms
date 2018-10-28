@@ -51,20 +51,29 @@
             <p>创建时间</p>
             <p>入学年份</p>
             <p>状态</p>
+            <p>学号</p>
             <p>操作</p>
         </div>
         <table style="border: 1px solid #cccccc;">
             <c:forEach items="${list}" var="stu">
                 <tr>
                     <td style="width:70px;"><img src="img/kuai.png" id="img1"></td>
-                    <td style="width:70px;">黄彩云</td>
-                    <td style="width:70px;">21</td>
-                    <td style="width:50px;">女</td>
-                    <td style="width:80px;">星火三期</td>
-                    <td style="width:60px;">李廷</td>
-                    <td style="width:95px;">2018-10-22</td>
-                    <td style="width:92px;">2015-9-1</td>
-                    <td style="width:55px;">在职</td>
+                    <td style="width:70px;">${stu.name}</td>
+                    <td style="width:70px;">${stu.age}</td>
+                    <td style="width:50px;">
+                        <c:if test="${stu.sex}==1 ">
+                            男
+                        </c:if>
+                        <c:if test="${stu.sex}==0 ">
+                            女
+                        </c:if>
+                    </td>
+                    <td style="width:80px;">${stu.sclass}</td>
+                    <td style="width:60px;">${stu.teacher}</td>
+                    <td style="width:95px;">${stu.create_time}</td>
+                    <td style="width:92px;">${stu.year}</td>
+                    <td style="width:55px;">${stu.status}</td>
+                    <td style="width:55px;">${stu.sid}</td>
                     <td style="width:70px;">
                         <a href=""><img src="img/eye.gif"></a>
                         <a href=""><img src="img/laji.gif"></a>
@@ -73,22 +82,6 @@
                 </tr>
 
             </c:forEach>
-            <tr>
-                <td style="width:70px;"><img src="img/kuai.png" id="img1"></td>
-                <td style="width:70px;">黄彩云</td>
-                <td style="width:70px;">21</td>
-                <td style="width:50px;">女</td>
-                <td style="width:80px;">星火三期</td>
-                <td style="width:60px;">李廷</td>
-                <td style="width:95px;">2018-10-22</td>
-                <td style="width:92px;">2015-9-1</td>
-                <td style="width:55px;">在职</td>
-                <td style="width:70px;">
-                    <a href=""><img src="img/eye.gif"></a>
-                    <a href=""><img src="img/laji.gif"></a>
-                    <a href=""><img src="img/change1.gif"></a>
-                </td>
-            </tr>
         </table>
     </div>
 </div>
