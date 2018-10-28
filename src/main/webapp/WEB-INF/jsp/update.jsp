@@ -116,5 +116,10 @@
         $("#updateForm").submit();
 
     }
+    function c() {
+
+            window.location.href='/find';//点击返回，返回到上一页
+
+    }
 </script>
 </html>

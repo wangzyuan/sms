@@ -4,7 +4,6 @@ import com.team5.sms.entity.Student;
 import com.team5.sms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -32,24 +31,12 @@ public class StudentController {
     }
 
     /**
-     * 跳转页面  跳到add.jsp
-     * @Author guo_qx
-     * @param
-     * @return
-     */
-    @RequestMapping("/addRedirect")
-    public String addRedirect() {
-        return "add";
-    }
-    /**
      * 姚楠
      * @param student
      */
     @RequestMapping("/add")
-    public String add(Student student, BindingResult bindingResult) {
-        System.out.println(student.toString()+"---");
+    public void add(Student student) {
         studentService.add(student);
-        return "redirect:/find";
     }
 
     /*
