@@ -46,9 +46,9 @@
             <p>学生信息调整</p>
         </div>
         <div class="search">
-            <form action="javascript:void(0)" method="post">
+            <form action="/findStudent" method="post">
                 姓名：<input name="name" class="input1" type="text">
-                学号：<input name="number" class="input1" type="text">
+                学号：<input name="sid" class="input1" type="text">
                 <input type="submit" value="搜索" style="margin-left:10px; width:65px; height:30px; background: cornflowerblue; border: 1px solid #ccc;">
             </form>
             <a href="/addRedirect"><img style="margin-top: 12px; margin-left: 15px; float: left;" src="../../static/img/add.gif"></a>
@@ -81,11 +81,11 @@
                     </c:if>
                     </td>
                     <td style="width:70px;">${stu.sclass}</td>
-                    <td style="width:75px;">${stu.sid}</td>
                     <td style="width:60px;">${stu.teacher}</td>
                     <td style="width:95px;">${stu.create_time}</td>
                     <td style="width:92px;">${stu.year}</td>
                     <td style="width:55px;">${stu.status}</td>
+                    <td style="width:75px;">${stu.sid}</td>
                     <td style="width:70px;">
                         <a href="/findById/${stu.sid}"><img src="../../static/img/eye.gif"></a>
                         <a href="/delete/${stu.sid}"><img src="../../static/img/laji.gif"></a>

@@ -64,6 +64,30 @@ public class DaoImpl implements Dao {
     }
 
     @Override
+    public List<Student> findStudentByName(String name) {
+        List<Student> list  = CacheList.getCacheList();
+        List<Student> findList = new ArrayList<Student>();
+        for (int i = 0;i<list.size();i++){
+            if (name.equals(list.get(i).getName())){
+                findList.add(list.get(i));
+            }
+        }
+        return findList;
+    }
+
+    @Override
+    public List<Student> findStudentBYIdAndByName(String name, String sid) {
+        List<Student> list  = CacheList.getCacheList();
+        List<Student> findList = new ArrayList<Student>();
+        for (int i = 0;i<list.size();i++){
+            if ((name.equals(list.get(i).getName()))&&(sid.equals(list.get(i).getSid()))){
+                findList.add(list.get(i));
+            }
+        }
+        return findList;
+    }
+
+    @Override
     public void deleteStudent(String sid) {
         List<Student> list = CacheList.getCacheList();
         for (int i = 0; i < list.size(); i++) {
