@@ -3,52 +3,55 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link href="main1.css" rel="stylesheet" type="text/css">
+    <link href="../../static/main1.css" rel="stylesheet" type="text/css">
     <script>
         function f3(){
             var img=document.getElementById("img_kuai");
-            img.src="img/kuai1.gif";
+            img.src="../../static/img/kuai1.gif";
         }
         function f4(){
             var img=document.getElementById("img_kuai");
-            img.src="img/kuai1.gif";
+            img.src="../../static/img/kuai1.gif";
             var delate=document.getElementById("delate");
             delate.style.display="block";
         }
         function quxiao(){
             var delate=document.getElementById("delate");
             delate.style.display="none";
+            var img=document.getElementById("img_kuai");
+            img.src="../../static/img/kuai.gif";
+        }
+        function sure1(){
+            var button=document.getElementById("button1");
+            button.action="javascript:void(0)";
+            button.submit();
         }
     </script>
 </head>
 <body>
 <div id="header">
-    <div class="img"><img src="img/header.gif"></div>
+    <div class="img"><img src="../../static/img/header.gif"></div>
 </div>
 <div id="main">
-    <div class="left"><img src="img/left.jpg"></div>
+    <div class="left"><img src="../../static/img/left.jpg"></div>
     <div class="right">
         <div class="dao">
-            <img src="img/dao_img.gif">
+            <img src="../../static/img/dao_img.gif">
             <p>首页</p>
             <p>学生管理</p>
             <p>学生信息变更管理</p>
             <p>学生信息调整</p>
         </div>
         <div class="search">
-            <div class="name">
-                <p>姓名：</p>
-                <input id="namevalue" class="input1" type="text">
-            </div>
-            <div class="cLass">
-                <p>学号：</p>
-                <input id="xuehao" class="input1" type="text">
-            </div>
-            <img onclick="f1()" style="margin-top: 12px; margin-left: 20px;" src="img/search.gif">
-            <img style="margin-top: 0; margin-left: 15px;" src="img/add.gif">
+            <form action="javascript:void(0)" method="post">
+            姓名：<input name="name" class="input1" type="text">
+            学号：<input name="number" class="input1" type="text">
+            <input type="submit" value="搜索" style="margin-left:10px; width:65px; height:30px; background: cornflowerblue; border: 1px solid #ccc;">
+        </form>
+            <a href="javascript:void(0)"><img style="margin-top: 12px; margin-left: 15px; float: left;" src="../../static/img/add.gif"></a>
         </div>
         <div class="con">
-            <span><img src="img/kuai.gif"></span>
+            <span><img src="../../static/img/kuai.gif"></span>
             <p>姓名</p>
             <p>年龄</p>
             <p>性别</p>
@@ -62,7 +65,7 @@
         </div>
         <table style="border: 1px solid #cccccc;">
             <tr align="center">
-                <td style="width:50px;" align="left"><img src="img/kuai.png" id="img_kuai"></td>
+                <td style="width:50px;" align="right"><img src="../../static/img/kuai.png" id="img_kuai"></td>
                 <td style="width:70px;">黄彩云</td>
                 <td style="width:70px;">21</td>
                 <td style="width:50px;">女</td>
@@ -73,9 +76,9 @@
                 <td style="width:92px;">2015-9-1</td>
                 <td style="width:55px;">在职</td>
                 <td style="width:70px;">
-                    <a href="javascript:void(0)"><img onclick="f3()" src="img/eye.gif"></a>
-                    <a href="javascript:void(0)"><img onclick="f4()" src="img/laji.gif"></a>
-                    <a href="javascript:void(0)"><img src="img/change1.gif"></a>
+                    <a href="javascript:void(0)"><img onclick="f3()" src="../../static/img/eye.gif"></a>
+                    <a href="javascript:void(0)"><img onclick="f4()" src="../../static/img/laji.gif"></a>
+                    <a href="javascript:void(0)"><img src="../../static/img/change1.gif"></a>
                 </td>
             </tr>
         </table>
@@ -84,7 +87,7 @@
 <div class="delate" id="delate">
     <a href="javascript:void (0)" onclick="quxiao()">x</a>
     <h1>确定删除吗？</h1>
-    <button style="margin-left: 90px;">确定</button>
+    <button style="margin-left: 90px;" onclick="sure1()" id="button1">确定</button>
     <button onclick="quxiao()">取消</button>
 </div>
 

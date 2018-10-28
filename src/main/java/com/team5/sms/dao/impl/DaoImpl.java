@@ -8,12 +8,12 @@
  */
 package com.team5.sms.dao.impl;
 
-import com.team5.sms.Util.FileUtil;
 import com.team5.sms.cache.CacheList;
 import com.team5.sms.dao.Dao;
 import com.team5.sms.entity.Student;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 @Repository
 public class DaoImpl implements Dao {
@@ -39,13 +39,42 @@ public class DaoImpl implements Dao {
                 list.get(i).setStatus(student.getStatus());
             }
         }
-        FileUtil.writeFile(list, "b.txt");
-
     }
 
 
     public List<Student> findAllStudent() {
         List<Student> stuList = CacheList.getCacheList();
-        return stuList;
+        List<Student> students = new ArrayList<>();
+        for(int i=0;i<stuList.size();i++){
+            if(stuList.get(i).getStatus().equals(1)){
+                students.add(stuList.get(i));
+            }
+        }
+        return students;
     }
+
+    @Override
+    public List<Student> findStudentById(String sid) {
+        List<Student> stuList = CacheList.getCacheList();
+        List<Student> findList = new ArrayList<>();
+        for(int i=0;i<stuList.size();i++){
+            if(stuList.get(i).getSid().equals(sid)){
+                findList.add(stuList.get(i));
+            }
+        }
+        return findList;
+    }
+
+    @Override
+    public void deleteStudent(String sid) {
+        List<Student> list = CacheList.getCacheList();
+        for (int i = 0; i < list.size(); i++) {
+            if (sid.equals(list.get(i).getSid())) {
+                list.get(i).setStatus(0);
+            }
+        }
+
+    }
+
+
 }
