@@ -1,6 +1,7 @@
 package com.team5.sms.dao;
 
 import com.team5.sms.entity.Student;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 

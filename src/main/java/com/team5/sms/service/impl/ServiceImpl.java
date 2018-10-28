@@ -11,14 +11,16 @@ package com.team5.sms.service.impl;
 import com.team5.sms.dao.Dao;
 import com.team5.sms.entity.Student;
 import com.team5.sms.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
-@Service
+@Service("dao")
 public class ServiceImpl implements StudentService {
-    @Resource
+    @Autowired
     Dao dao;
 
     @Override

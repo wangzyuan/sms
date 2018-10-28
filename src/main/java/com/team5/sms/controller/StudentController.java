@@ -2,6 +2,7 @@ package com.team5.sms.controller;
 
 import com.team5.sms.entity.Student;
 import com.team5.sms.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,6 +21,7 @@ import java.util.List;
 @Controller
 public class StudentController {
     private List<Student> list;
+    @Autowired
     StudentService studentService;
 
     @RequestMapping("/index")

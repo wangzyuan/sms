@@ -9,6 +9,7 @@
 package com.team5.sms.service;
 
 import com.team5.sms.entity.Student;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
