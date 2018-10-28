@@ -19,10 +19,8 @@ import java.util.List;
 public class DaoImpl implements Dao {
     @Override
     public void add(Student student) {
-
         List<Student> studentList = CacheList.getCacheList();
         studentList.add(student);
-        System.out.println(studentList);
     }
 
     @Override

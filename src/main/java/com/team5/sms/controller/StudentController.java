@@ -31,6 +31,12 @@ public class StudentController {
         return "index";
     }
 
+    /**
+     * 跳转页面  跳到add.jsp
+     * @Author guo_qx
+     * @param
+     * @return
+     */
     @RequestMapping("/addRedirect")
     public String addRedirect() {
         return "add";
@@ -41,7 +47,7 @@ public class StudentController {
      */
     @RequestMapping("/add")
     public String add(Student student, BindingResult bindingResult) {
-        System.out.println("---add---");
+        System.out.println(student.toString()+"---");
         studentService.add(student);
         return "redirect:/find";
     }
@@ -74,7 +80,6 @@ public class StudentController {
     @RequestMapping("/find")
     public String findAllStudent(HttpServletRequest req){
         List<Student> list  =studentService.findAllStudent();
-        System.out.println("---"+list.size());
         req.setAttribute("list",list);
         return "index";
     }

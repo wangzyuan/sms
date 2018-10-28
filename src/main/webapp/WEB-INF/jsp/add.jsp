@@ -33,8 +33,8 @@
         </td>
         <td>
             <b>性   别:</b>
-            <input id="tit2" style='display:inline-block;width:70px'  name = "sex" >
-            <span id="pop2"></span>
+            <input type="radio" name="sex" value='1'/><label>男</label>
+            <input name="sex" checked type="radio" value="0"/><label>女</label>
         </td>
         <td>
             <b>年   龄:</b>
@@ -62,7 +62,7 @@
     <tr>
         <td>
             <b>创建时间:</b>
-            <input id="tit7" style='display:inline-block;width:70px' name = "create_time" >
+            <input id="tit7" style='display:inline-block;width:70px' name = "create_time">
             <span id="pop7"></span>
         </td>
         <td>
@@ -72,7 +72,7 @@
         </td>
         <td>
             <b>状   态:</b>
-            <input id="tit9" style='display:inline-block;width:70px' name = "status" >
+            <input id="tit9" style='display:inline-block;width:70px' name = "status" value="1"  type="hidden">
             <span id="pop9"></span>
         </td>
     </tr>
@@ -84,6 +84,12 @@
     function b() {
         var name1 = document.getElementById("tit1").value;
         var name2 = document.getElementById("tit2").value;
+        if(name2 == "男") {
+            document.getElementById('tit2').innerHTML = '1';
+        }
+        if(name2 == "女") {
+            document.getElementById('tit2').innerHTML = '0';
+        }
         var name3 = document.getElementById("tit3").value;
         var name4 = document.getElementById("tit4").value;
         var name5 = document.getElementById("tit5").value;
