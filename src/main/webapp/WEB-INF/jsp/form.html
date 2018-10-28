@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>修改页面</title>
+<style>
+body{
+	background-color: lightblue;
+	text-align: center;
+	width:100%;
+	}
+.see{
+	width: 900px;
+	height:500px; 
+	/*background: red;*/
+	margin: 0 auto;
+
+}
+.see span:hover{
+	cursor: pointer;
+}
+.see input{
+	float:left; margin-right: 180px;
+	margin-top: 30px;
+}
+.see button{float: left;
+           margin-left:380px;
+           margin-top: 30px;
+       }
+.see input:nth-child(3n){margin-right: 0;}
+
+</style>
+
+</head>
+<body>	
+	<img src="头像 男孩.png" alt="头像" style="width:150px;height:150px;">
+	<form class="see" action="" method="post">
+		<input name="name" type="text" value="姓名：王思雨">
+		<input name="age" type="text" value="年龄：22">
+		<input name="sex" type="text" value="性别：女">
+		<input name="class" type="text" value="班级:星火三期">
+		<input name="number" type="text" value="学号：4918">
+		<input name="teacher" type="text" value="老师：刘丽娜">
+		<input name="time1" type="text" value="创建时间：2018.10.22">
+		<input name="time2" type="text" value="入学年份：2018年">
+		<input name="bott" type="text" value="状态：1">
+	    <button type="submit" onclick="b();" >提交</button> 
+	    <a href=""><button onclick="c();" style="margin-left:10px;">返回</button></a> 
+	</form>
+	
+<script>		
+	function b(){
+		alert("提交成功");	}
+	function c(){
+		window.location.href="window.history.back(-1)";
+	}
+
+</script>
+</body>
+</html>
