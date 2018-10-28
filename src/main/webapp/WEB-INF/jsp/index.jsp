@@ -70,7 +70,7 @@
         <table style="border: 1px solid #cccccc;">
             <c:forEach items="${list}" var="stu">
                 <tr>
-                    <td style="width:70px;"><img src="../../static/img/kuai.png" id="img1"></td>
+                    <td style="width:50px;" align="right"><img src="../../static/img/kuai.png" id="img1"></td>
                     <td style="width:70px;">${stu.name}</td>
                     <td style="width:70px;">${stu.age}</td>
                     <td style="width:50px;">
@@ -80,12 +80,12 @@
                         女
                     </c:if>
                     </td>
-                    <td style="width:80px;">${stu.sclass}</td>
+                    <td style="width:70px;">${stu.sclass}</td>
+                    <td style="width:75px;">${stu.sid}</td>
                     <td style="width:60px;">${stu.teacher}</td>
                     <td style="width:95px;">${stu.create_time}</td>
                     <td style="width:92px;">${stu.year}</td>
                     <td style="width:55px;">${stu.status}</td>
-                    <td idstyle="width:55px;">${stu.sid}</td>
                     <td style="width:70px;">
                         <a href="/findById/${stu.sid}"><img src="../../static/img/eye.gif"></a>
                         <a href="/delete/${stu.sid}"><img src="../../static/img/laji.gif"></a>

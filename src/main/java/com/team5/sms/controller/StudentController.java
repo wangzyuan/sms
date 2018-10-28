@@ -96,8 +96,8 @@ public class StudentController {
     * @Copyright ©2018 Suixingpay. All rights reserved.
     * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
     */
-   @RequestMapping("/findById")
-    public String findStudentById(HttpServletRequest req,String sid){
+   @RequestMapping("/findById/{sid}")
+    public String findStudentById(HttpServletRequest req,@PathVariable String sid){
         List<Student> list = studentService.findStudentById(sid);
             req.setAttribute("list",list);
             return "details";

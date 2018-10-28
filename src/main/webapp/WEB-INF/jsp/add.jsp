@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-<img  src="头像 男孩.png" alt="头像" style="width:150px;height:150px;">
+<img  src="../../static/img/boy_head.png" alt="头像" style="width:150px;height:150px;">
 <form id="exam" name="exam" action ="/add" method="post">
 <table class="see" cellspacing="100px">
     <tr>
@@ -154,8 +154,8 @@
 
     }
     function c(){
-        window.location.href='window.history.back(-1)';
+        window.location.href='find';
     }
 </script>
 </body>
-</html>>
+</html>

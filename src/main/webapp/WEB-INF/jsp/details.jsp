@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-<img src="../../static/img/头像 男孩.png" alt="头像" style="width:150px;height:150px;">
+<img src="../../static/img/boy_head.png" alt="头像" style="width:150px;height:150px;">
 <table class="see" cellspacing="100px">
     <c:forEach items="${list}" var="list">
         <tr>
@@ -63,7 +63,7 @@
 <button onclick="a()">返回</button>
 <script>
     function a(){
-        window.location.href='window.history.back(-1)';//点击返回，返回到上一页
+        window.location.href='/find';//点击返回，返回到上一页
     }
 </script>
 </body>
