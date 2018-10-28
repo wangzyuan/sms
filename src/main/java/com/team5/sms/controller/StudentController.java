@@ -7,9 +7,7 @@ import com.team5.sms.service.StudentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -30,6 +28,10 @@ public class StudentController{
         return "index";
     }
 
+    /**
+     * 姚楠
+     * @param student
+     */
     @RequestMapping("/add")
     public void add(Student student){
         studentService.add(student);
@@ -52,5 +54,21 @@ public class StudentController{
         FileUtil.writeFile(list,"b.txt");
        return "index";
 
+    }
+
+    /*
+     * All rights Reserved, Designed By Suixingpay.
+     *
+     * @Author gonghang[gong_hang@suixingpay.com]
+     * @Method findAll
+     * @Date 2018/10/28   10:38 AM
+     * @Copyright ©2018 Suixingpay. All rights reserved.
+     * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
+     */
+    @RequestMapping("/find")
+    public String findAllStudent(HttpServletRequest req,Student student){
+        list = CacheList.getCacheList();
+        req.setAttribute("list",list);
+        return "index";
     }
 }
