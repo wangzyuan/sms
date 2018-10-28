@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>查看详情页面</title>
+<style>
+body{
+	background-color: lightblue;
+	text-align: center;
+	}
+.see{
+	margin: 0 auto;
+}
+</style>
+</head>
+<body>
+	<img src="头像 男孩.png" alt="头像" style="width:150px;height:150px;">
+	<table class="see" cellspacing="100px">
+		<tr>
+			<td><b>姓   名:</b></td>
+			<td>王思雨</td>
+			<td><b>性   别:</b></td>
+			<td>女</td>
+			<td><b>年   龄:</b></td> 
+			<td>22岁</td>
+		</tr>
+		<tr>
+			<td><b>学   号:</b></td>
+	        <td>4918</td>
+	        <td><b>班   级:</b></td>
+	        <td>星火三期</td>
+	        <td><b>导   员:</b></td>
+	        <td>刘丽娜</td>
+	    </tr>
+		<tr>
+	       	<td><b>创建时间:</b></td>
+	        <td>2018.10.22</td>
+	        <td><b>入学年份:</b></td>
+	        <td>2018年</td>
+			<td><b>状   态:</b></td>
+	        <td>1</td>
+	    </tr>
+	</table>  
+	<button onclick="a()">返回</button>
+	<script>
+		function a(){
+			window.location.href='window.history.back(-1)';//点击返回，返回到上一页
+	    }
+	</script> 
+</body>
+</html>

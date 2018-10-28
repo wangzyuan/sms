@@ -15,9 +15,9 @@ body{font-size: 12px; font-family: "宋体";}
 #main .right .search .cLass{float: left}
 #main .right .search .cLass p{padding:20px 20px 21px 25px; float: left; }
 #main .right .con{height:19px; background: url("img/dao2_bg.gif") no-repeat top;}
-#main .right .con span{width:10px; height:10px; float: left; margin-top: 5px; margin-left: 2px; margin-right: 63px;}
+#main .right .con span{width:10px; height:10px; float: left; margin-top: 5px; margin-left: 42px; margin-right: 30px;}
 #main .right .con p{float: left; margin-right: 45px; margin-top: 2px;}
-#main .right table tr{border: 1px solid #ccc; border-right:0;}
+#main .right table tr{border: 1px solid #ccc; border-right:0; height:30px;}
 #main .right table tr td{border-right: 1px solid #ccc;}
 .delate{display:none; position:absolute; width:300px; height:200px; margin-left:-100px; margin-top:-120px; border-radius: 20px; background:rgba(0,0,0,.5); position: absolute; left:50%; top:50%;}
 .delate a{ width:20px; height:20px; display: block;  position: relative; top:5px; left:270px; font-size: 28px; color:#ffffff; text-decoration: none;}

@@ -5,6 +5,7 @@ import com.team5.sms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -72,9 +73,15 @@ public class StudentController {
         return "index";
     }
 
-    @RequestMapping("/delete")
-    public String deleteStudent(String sId) {
-        studentService.deleteStudent(sId);
-        return "index";
+    /**
+     * 根据学号进行删除
+     * @Author guo_qx
+     * @param sid
+     * @return
+     */
+    @RequestMapping("/delete/{sid}")
+    public String deleteStudent(@PathVariable String sid) {
+        studentService.deleteStudent(sid);
+        return "redirect:/find";
     }
 }
