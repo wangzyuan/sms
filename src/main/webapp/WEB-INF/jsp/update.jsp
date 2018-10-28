@@ -41,9 +41,9 @@
         </td>
         <td>
             <b>性别:</b>
-            <span> <c:if test="${stu.sex==1 }">
+            <span> <c:if test="${s.sex==1 }">
                 男
-            </c:if> <c:if test="${stu.sex==0 }">
+            </c:if> <c:if test="${s.sex==0 }">
                 女
             </c:if></span>
             <span onclick="change_name(this)">修改</span>
