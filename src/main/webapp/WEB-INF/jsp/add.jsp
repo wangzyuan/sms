@@ -78,8 +78,8 @@
     </tr>
 </table>
 <button type="submit" onclick="b()">提交</button>
-<button onclick="c()">取消</button>
 </form>
+<button onclick="c()">取消</button>
 <script>
     function b() {
         var name1 = document.getElementById("tit1").value;
@@ -154,7 +154,7 @@
 
     }
     function c(){
-        window.location.href='find';
+        window.location.href='/find';//点击返回，返回到上一页
     }
 </script>
 </body>
