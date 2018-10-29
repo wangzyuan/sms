@@ -18,7 +18,7 @@
             width:100%;
         }
         .see{
-            width: 100%;
+            width: 50%;
             margin: 0 auto;
         }
         .see tr td span:hover{
@@ -26,80 +26,100 @@
         }
     </style>
 
+
 </head>
+<script type="text/javascript" src="../../static/jquery-2.1.0.js"></script>
+
+
 <body>
 <img src="../../static/img/头像 男孩.png" alt="头像" style="width:150px;height:150px;">
-
+<form id="updateForm"  action="/update" method="post">
 <table class="see" cellspacing="100px">
 
     <c:forEach items="${list}" var="s">
     <tr>
         <td>
             <b>姓名:</b>
-            <span>${s.name}</span>
-            <span onclick="change_name(this)">修改</span>
+            <%--<span>${s.name}</span>--%>
+            <input type="text" name="name" size="30" id="name" style="width: 50%" value="${s.name}" />
         </td>
         <td>
             <b>性别:</b>
-            <span> <c:if test="${s.sex==1 }">
-                男
-            </c:if> <c:if test="${s.sex==0 }">
-                女
-            </c:if></span>
-            <span onclick="change_name(this)">修改</span>
+            <input type="text" name="sex" size="30" id="sex" style="width: 50%" value="<c:if test="${s.sex==1 }">男</c:if> <c:if test="${s.sex==0 }">女</c:if>" />
         </td>
 
         <td>
             <b>年龄:</b>
-            <span>${s.age}</span>
-            <span onclick="change_name(this)">修改</span>
+            <input type="text" name="age" size="30" id="age" style="width: 50%" value="${s.age}" />
         </td>
 
     </tr>
     <tr>
         <td>
             <b>学号:</b>
-            <span>${s.sid}</span>
-            <span onclick="change_name(this)">修改</span>
+            <input type="text" name="sid" size="30" id="sid" style="width: 50%" value="${s.sid}" />
         </td>
 
         <td>
             <b>班级:</b>
-            <span>${s.sclass}</span>
-            <span onclick="change_name(this)">修改</span>
+            <input type="text" name="sclass" size="30" id="sclass" style="width: 50%" value="${s.sclass}" />
         </td>
         <td>
             <b>导员:</b>
-            <span>${s.teacher}</span>
-            <span onclick="change_name(this)">修改</span>
+            <input type="text" name="teacher" size="30" id="teacher" style="width: 50%" value="${s.teacher}" />
         </td>
     </tr>
     <tr>
         <td>
             <b>创建时间:</b>
             <span>${s.create_time}</span>
-            <span onclick="change_name(this)">修改</span>
         </td>
         <td>
             <b>入学年份:</b>
-            <span>${s.year}</span>
-            <span onclick="change_name(this)">修改</span>
+            <input type="text" name="year" size="30" id="year" style="width: 50%" value="${s.year}" />
         </td>
         <td>
             <b>状态:</b>
             <span>${s.status}</span>
-            <span onclick="change_name(this)">修改</span>
         </td>
+        <td style="display: none">
+            <input type="text" name="status" value="${s.status}"/>
+    </tr>
+        <td style="display: none">
+            <input type="text" name="create_time" value="${s.create_time}"/>
+    </tr>
+
+
     </tr>
     </c:forEach>
 </table>
-<button oncilck="b()">提交</button>
-<button oncilck="c()">取消</button>
+</form>
+<button onclick="b()">提交</button>
+<button onclick="c()">取消</button>
+</body>
 <script>
     function change_name(obj){
         var o=obj.previousElementSibling;
         o.innerHTML="<input value='' style='display:inline-block;width:70px'/>"
     }
+    function b() {
+        var sex = $("#sex");
+
+        if ($.trim(sex.val())=="男"){
+            sex.val(1)
+        }else{
+            sex.val(0)
+        }
+
+
+
+        $("#updateForm").submit();
+
+    }
+    function c() {
+
+            window.location.href='/find';//点击返回，返回到上一页
+
+    }
 </script>
-</body>
 </html>

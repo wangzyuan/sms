@@ -13,26 +13,21 @@
     <title></title>
     <link href="../../static/main1.css" rel="stylesheet" type="text/css">
     <script>
-        function f3(){
-            var img=document.getElementById("img_kuai");
-            img.src="../../static/img/kuai1.gif";
+        function f3() {
+            var img = document.getElementById("img_kuai");
+            img.src = "img/kuai1.gif";
         }
-        function f4(){
-            var img=document.getElementById("img_kuai");
-            img.src="../../static/img/kuai1.gif";
-            var delate=document.getElementById("delate");
-            delate.style.display="block";
+
+        function f4() {
+            var img = document.getElementById("img_kuai");
+            img.src = "img/kuai1.gif";
+            var delate = document.getElementById("delate");
+            delate.style.display = "block";
         }
-        function quxiao(){
-            var delate=document.getElementById("delate");
-            delate.style.display="none";
-            var img=document.getElementById("img_kuai");
-            img.src="../../static/img/kuai.gif";
-        }
-        function sure1(){
-            var button=document.getElementById("button1");
-            button.action="javascript:void(0)";
-            button.submit();
+
+        function quxiao() {
+            var delate = document.getElementById("delate");
+            delate.style.display = "none";
         }
     </script>
 </head>
@@ -51,12 +46,13 @@
             <p>学生信息调整</p>
         </div>
         <div class="search">
-            <form action="javascript:void(0)" method="post">
+            <form action="/findStudent" method="post">
                 姓名：<input name="name" class="input1" type="text">
-                学号：<input name="number" class="input1" type="text">
+                学号：<input name="sid" class="input1" type="text">
                 <input type="submit" value="搜索" style="margin-left:10px; width:65px; height:30px; background: cornflowerblue; border: 1px solid #ccc;">
             </form>
-            <a href="javascript:void(0)"><img style="margin-top: 12px; margin-left: 15px; float: left;" src="../../static/img/add.gif"></a>
+            <a href="/addRedirect"><img style="margin-top: 12px; margin-left: 15px; float: left;" src="../../static/img/add.gif"></a>
+
         </div>
         <div class="con">
             <span><img src="../../static/img/kuai.gif"></span>
@@ -64,16 +60,16 @@
             <p>年龄</p>
             <p>性别</p>
             <p>班级</p>
-            <p>学号</p>
             <p>老师</p>
             <p>创建时间</p>
             <p>入学年份</p>
             <p>状态</p>
+            <p>学号</p>
             <p>操作</p>
         </div>
         <table style="border: 1px solid #cccccc;">
             <c:forEach items="${list}" var="stu">
-                <tr align="center">
+                <tr>
                     <td style="width:50px;" align="right"><img src="../../static/img/kuai.png" id="img1"></td>
                     <td style="width:70px;">${stu.name}</td>
                     <td style="width:70px;">${stu.age}</td>
@@ -85,14 +81,13 @@
                     </c:if>
                     </td>
                     <td style="width:70px;">${stu.sclass}</td>
-                    <td style="width:75px;">${stu.sid}</td>
                     <td style="width:60px;">${stu.teacher}</td>
                     <td style="width:95px;">${stu.create_time}</td>
                     <td style="width:92px;">${stu.year}</td>
                     <td style="width:55px;">${stu.status}</td>
-
+                    <td style="width:75px;">${stu.sid}</td>
                     <td style="width:70px;">
-                        <a href="/findById"><img src="../../static/img/eye.gif"></a>
+                        <a href="/findById/${stu.sid}"><img src="../../static/img/eye.gif"></a>
                         <a href="/delete/${stu.sid}"><img src="../../static/img/laji.gif"></a>
                         <a href="/updateUI/${stu.sid}"><img src="../../static/img/change1.gif"></a>
                     </td>
@@ -108,7 +103,6 @@
     <button style="margin-left: 90px;" onclick="sure1()" id="button1">确定</button>
     <button onclick="quxiao()">取消</button>
 </div>
-
 
 </body>
 </html>

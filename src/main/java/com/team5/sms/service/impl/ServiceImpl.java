@@ -48,4 +48,16 @@ public class ServiceImpl implements StudentService {
         List<Student> list = dao.findStudentById(sid);
         return list;
     }
+
+    @Override
+    public List<Student> findStudentByName(String name) {
+        List<Student> list = dao.findStudentByName(name);
+        return list;
+    }
+
+    @Override
+    public List<Student> findStudentByNameAndById(String name, String sid) {
+        List<Student> list = dao.findStudentBYIdAndByName(name,sid);
+        return list;
+    }
 }

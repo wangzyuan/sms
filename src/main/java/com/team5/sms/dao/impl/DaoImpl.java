@@ -19,10 +19,8 @@ import java.util.List;
 public class DaoImpl implements Dao {
     @Override
     public void add(Student student) {
-
         List<Student> studentList = CacheList.getCacheList();
         studentList.add(student);
-        System.out.println(studentList);
     }
 
     @Override
@@ -46,7 +44,7 @@ public class DaoImpl implements Dao {
         List<Student> stuList = CacheList.getCacheList();
         List<Student> students = new ArrayList<>();
         for(int i=0;i<stuList.size();i++){
-            if(stuList.get(i).getStatus().equals(1)){
+            if(stuList.get(i).getStatus()==1){
                 students.add(stuList.get(i));
             }
         }
@@ -60,6 +58,30 @@ public class DaoImpl implements Dao {
         for(int i=0;i<stuList.size();i++){
             if(stuList.get(i).getSid().equals(sid)){
                 findList.add(stuList.get(i));
+            }
+        }
+        return findList;
+    }
+
+    @Override
+    public List<Student> findStudentByName(String name) {
+        List<Student> list  = CacheList.getCacheList();
+        List<Student> findList = new ArrayList<Student>();
+        for (int i = 0;i<list.size();i++){
+            if (name.equals(list.get(i).getName())){
+                findList.add(list.get(i));
+            }
+        }
+        return findList;
+    }
+
+    @Override
+    public List<Student> findStudentBYIdAndByName(String name, String sid) {
+        List<Student> list  = CacheList.getCacheList();
+        List<Student> findList = new ArrayList<Student>();
+        for (int i = 0;i<list.size();i++){
+            if ((name.equals(list.get(i).getName()))&&(sid.equals(list.get(i).getSid()))){
+                findList.add(list.get(i));
             }
         }
         return findList;
