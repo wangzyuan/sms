@@ -69,8 +69,10 @@ body{
 	    </tr>
 	</table>  
 	<button onclick="b()">提交</button>
-	<button onclick="c()">取消</button>
+	<!--<button onclick="c()">取消</button>-->
+	<input type="reset"  value="取消">
 	<script>
+		
 		function b() {
             var name1 = document.getElementById("tit1").value;
             var name2 = document.getElementById("tit2").value;
@@ -136,9 +138,9 @@ body{
                 }
             }
         }
-        function c(){
-            window.location.href='window.history.back(-1)';
-        }
+        // function c(){
+        //     window.location.href='';
+        // }
 	</script>
 </body>
-</html>>
+</html>
